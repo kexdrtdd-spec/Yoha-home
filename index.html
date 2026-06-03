@@ -85,8 +85,12 @@
    <script>
    function goToURL() {
      var url = document.getElementById("urlInput").value;
+       
      if (!url.startsWith("http")) {
-       url = "https://" + url;
+         if (!url.startsWith("https://www.Youtube.com"){
+             window.open("https://kexdrtdd-spec.github.io/YouTube-onyoha/")
+         }
+             = "https://" + https     
      }
      
        // เปลี่ยนไปยังเว็บไซต์อื่นในหน้าต่างเดิม
