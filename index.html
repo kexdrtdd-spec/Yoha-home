@@ -1,50 +1,96 @@
 <!DOCTYPE html>
-<html lang="en"><!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Page title</title>
-</head>
-<body>
-    
-</body>
-</html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yoha</title>
+    <style>
+        /* จัดโครงสร้างหน้าเว็บทั้งหมดให้อยู่ตรงกลาง */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        /* จัดตำแหน่งหัวข้อ yoha ให้อยู่มุมซ้ายบนเหมือนในรูป */
+        .header-title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            margin: 0;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ตกแต่งกล่องพิมพ์ข้อความ (Input) ทั้งสองกล่อง */
+        input[type="text"] {
+            width: 300px;
+            padding: 12px 20px;
+            margin: 10px 0;
+            font-size: 18px;
+            border: 2px solid #1a2a3a;
+            border-radius: 50px; /* ทำให้กล่องโค้งมนรีเหมือนวงรี */
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        /* จัดกลุ่มองค์ประกอบเพื่อให้ปุ่มอยู่ข้างๆ กล่องพิมพ์ได้ */
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ตกแต่งปุ่มกด (Button) */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ffffff;
+            border: 2px solid #1a2a3a;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #1a2a3a;
+            color: white;
+        }
+
+        /* จัดการขนาดและการเว้นระยะของโลโก้รูปภาพตรงกลาง */
+        .logo-image {
+            width: 150px; /* สามารถปรับขนาดเล็กใหญ่ได้ตรงนี้ */
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-   <ul>
-       <li>yoha</li>
-   </ul>
-   
-   <input type="text" id="urlInput" placeholder="url">
 
 
+   <img src="logo.png" alt="Yoha Logo" class="logo-image">
+           
+   <form action="https://www.google.com/search" method="get" target="_blank" class="input-group">
+      <input type="text" name="q" placeholder="Search" required>
+      <button type="submit">Search</button>
+   </form>
 
    <script>
    function goToURL() {
-     // ดึงข้อความจากกล่อง input
      var url = document.getElementById("urlInput").value;
-     [span_5](start_span)// ตรวจสอบเบื้องต้นว่ามี http หรือ https หรือยัง ถ้าไม่มีให้เติมให้[span_5](end_span)
      if (!url.startsWith("http")) {
-       [span_6](start_span)url = "https://" + url;[span_6](end_span)
+       url = "https://" + url;
      }
-     
-     // สั่งให้หน้าต่างปัจจุบันเปิด URL นั้น
-     [span_7](start_span)window.open(url, '_blank');[span_7](end_span)
+     window.open(url, '_blank');
    }
    </script>
-           
-   <ul>
-       <li>ay</li>
-   </ul>
-          
-   <form action="https://www.google.com/search" method="get" target="_blank">
-      <input type="text" name="q" placeholder="search" required>
-      <button type="submit">Search</button>
-   </form>
 
 </body>
 </html>
